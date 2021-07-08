@@ -18,5 +18,15 @@
   "homepage": "https://github.com/pilskalns/nexrender-action-template-unzip#readme",
   "dependencies": {
     "adm-zip": "^0.5.5"
-  }
+  },
+  "devDependencies": {},
+  "keywords": [
+    "after",
+    "effects",
+    "nexrender",
+    "action",
+    "template",
+    "unzip",
+    "archive"
+  ]
 }
