@@ -9,7 +9,7 @@ module.exports = (job, settings, action, type) => {
             return reject("'action-template-unzip' module should be used only in 'prerender' section")
         }
 
-        if(job.template.extension != "zip"){
+        if(path.extname(job.template.dest).toLowerCase() != ".zip"){
             console.log(`[${job.uid}] [action-template-unzip] skipping - template file should have .zip extension`)
             return resolve(job)
         }    
@@ -19,7 +19,7 @@ module.exports = (job, settings, action, type) => {
         zip.extractAllTo(job.workpath, true)
 
         let entries = zip.getEntries();
-        let template = entries.find(entry => entry.name.endsWith('.aep'))
+        let template = entries.find(entry => entry.name.toLowerCase().endsWith('.aep'))
         if(!template){
             return reject(`[${job.uid}] [action-template-unzip] ERROR - no AE file found in the ZIP (extension .aep)`)
         }
