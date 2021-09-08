@@ -31,3 +31,9 @@
 * If there are multiple .aep files, the first found will be used (keep things tidy and don't use multiple .aep files inside a ZIP)
 * If action is used in POST-render, `reject` will be returned with an error message
 * If using multiple pre-render actions - might need to put this as a first
+
+
+## Changes:
+
+* 0.0.2 - Fix bug unzip not working when link is not http/s
+* 0.0.3 - Use central logger instance

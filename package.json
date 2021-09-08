@@ -1,6 +1,6 @@
 {
   "name": "nexrender-action-template-unzip",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Add support for nexrender AE templates inside ZIP archives",
   "main": "index.js",
   "scripts": {
