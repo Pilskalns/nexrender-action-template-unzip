@@ -10,7 +10,7 @@ module.exports = (job, settings, action, type) => {
         }
 
         if(path.extname(job.template.dest).toLowerCase() != ".zip"){
-            console.log(`[${job.uid}] [action-template-unzip] skipping - template file should have .zip extension`)
+            settings.logger.log(`[${job.uid}] [action-template-unzip] skipping - template file should have .zip extension`)
             return resolve(job)
         }    
         
@@ -25,7 +25,7 @@ module.exports = (job, settings, action, type) => {
         }
         let newPath = path.normalize(`${job.workpath}/${template.entryName}`)
 
-        console.log(`[${job.uid}] [action-template-unzip] setting new template path to: ${newPath}`)
+        settings.logger.log(`[${job.uid}] [action-template-unzip] setting new template path to: ${newPath}`)
 
         /**
          * Mutate the job object with unzipped AE file
