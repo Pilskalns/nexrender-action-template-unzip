@@ -1,5 +1,9 @@
 # nexrender-action-template-unzip
 
+## Install
+
+`npm install nexrender-action-template-unzip@latest`
+
 ## How to use
 
 1. Send .ZIP file as the source instead of AE project in the `template.src` value
