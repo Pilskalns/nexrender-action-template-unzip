@@ -37,3 +37,4 @@
 
 * 0.0.2 - Fix bug unzip not working when link is not http/s
 * 0.0.3 - Use central logger instance
+* 1.0.3 - Version bump to keep semver happy
