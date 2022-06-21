@@ -4,7 +4,7 @@
   "description": "Add support for nexrender AE templates inside ZIP archives",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,10 @@
   "dependencies": {
     "adm-zip": "^0.5.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/jest": "^28.1.2",
+    "jest": "^28.1.1"
+  },
   "keywords": [
     "after",
     "effects",

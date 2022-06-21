@@ -1,0 +1,33 @@
+{
+    "uid": "abcd123canY0uR3adM3",
+    "type": "default",
+    "state": "render:prerender",
+    "output": "C:\\tmp\\render\\abcd123canY0uR3adM3\\result.mov",
+    "priority": 1,
+    "template": {
+        "src": "s3://bucket.s3.region.amazonaws.com/ae_sample.zip",
+        "composition": "render_me",
+        "outputExt": "mov",
+        "outputModule": "nexrender_auto",
+        "continueOnMissing": true,
+        "dest": "C:\\tmp\\render\\abcd123canY0uR3adM3\\ae_sample.zip"
+    },
+    "assets": [
+        {
+            "type": "data",
+            "layerName": "caption",
+            "property": "Source Text",
+            "value": "This is a title"
+        }
+    ],
+    "actions": {
+        "prerender": [
+            {
+                "module": "nexrender-action-template-unzip"
+            }
+        ],
+        "postrender": []
+    },
+    "resultname": "result.mov",
+    "workpath": "C:\\tmp\\render\\abcd123canY0uR3adM3"
+}
