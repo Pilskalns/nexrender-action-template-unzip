@@ -1,6 +1,5 @@
 const fs = require('fs')
 const { resolve } = require('path')
-const { hasUncaughtExceptionCaptureCallback } = require('process')
 const unzip = require('../index')
 
 const sample = require('./samples/job.json')
