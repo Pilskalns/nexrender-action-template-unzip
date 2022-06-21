@@ -3,6 +3,9 @@ const path = require('path');
 
 module.exports = (job, settings, action, type) => {
 
+    // fallback to console if no preffered logger provided
+    settings.logger = settings.logger ?? console
+
     return new Promise((resolve, reject) => {
         
         if(type != "prerender"){
