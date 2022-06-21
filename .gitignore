@@ -2,3 +2,5 @@ node_modules
 
 test/tmp/*
 !test/tmp/.gitkeep
+test/samples/ae_sample*
+!test/samples/ae_sample*.zip

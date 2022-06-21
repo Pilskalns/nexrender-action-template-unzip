@@ -22,7 +22,10 @@ module.exports = (job, settings, action, type) => {
         zip.extractAllTo(job.workpath, true)
 
         let entries = zip.getEntries();
-        let template = entries.find(entry => entry.name.toLowerCase().endsWith('.aep'))
+        let template = entries.find(entry =>
+            entry.name.toLowerCase().endsWith('.aep') &&
+            !entry.entryName.toLowerCase().includes('adobe after effects auto-save')
+        )
         if(!template){
             return reject(`[${job.uid}] [action-template-unzip] ERROR - no AE file found in the ZIP (extension .aep)`)
         }

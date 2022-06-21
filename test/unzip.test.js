@@ -55,6 +55,31 @@ describe("nexrender-action-template-unzip", ()=>{
         expect(result.template.extension).toBe('aep')
     })
 
+    test("can do nested extraction", async ()=>{
+        sample.template.dest = resolve('./test/samples/ae_sample_nested.zip')
+
+        let expectedPath = resolve('./test/tmp/ae_sample_nested/subdirectory/nested.aep')
+        
+        let result = await unzip(sample, settings, null, 'prerender')
+
+        expect(fs.existsSync(expectedPath)).toBeTruthy()
+        expect(result.template.dest).toBe(expectedPath)
+        expect(result.template.extension).toBe('aep')
+    })
+
+
+    test("ignores autosave files", async ()=>{
+        sample.template.dest = resolve('./test/samples/ae_sample_autosave.zip')
+
+        let expectedPath = resolve('./test/tmp/ae_sample_autosave/basic_anim.aep')
+        
+        let result = await unzip(sample, settings, null, 'prerender')
+
+        expect(fs.existsSync(expectedPath)).toBeTruthy()
+        expect(result.template.dest).toBe(expectedPath)
+        expect(result.template.extension).toBe('aep')
+    })
+
 })
 
 
